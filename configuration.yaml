@@ -1,41 +1,47 @@
 homeassistant:
-  # Name of the location where Home Assistant is running
+  # 家庭名称
   name: Home
-  # Location required to calculate the time the sun rises and sets
+  # 所在地经纬度
   latitude: 31.286571
   longitude: 121.130073
-  # Impacts weather/sunrise data (altitude above sea level in meters)
+  # 海拔高度
   elevation: 0
-  # metric for Metric, imperial for Imperial
+  # 公制: metric, 英制: imperial
   unit_system: metric
-  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  # 所在时区
   time_zone: Asia/Shanghai
-  # Customization file
+  # 自定义文件
   customize: !include customize.yaml
   packages: !include_dir_named packages
 
-# Configure a default setup of Home Assistant (frontend, api, etc)
+# 默认设置(frontend, api...)
 default_config:
 
-# Show the introduction message on startup.
+# 启动欢迎语
 introduction:
 
+# 自定义面板
 panel_iframe:
   nodered:
     title: 'Node-Red'
     icon: 'mdi:shuffle-variant'
     url: 'http://home.wannayoung.top:1880/'
 
+# 使用Custom-UI
+frontend:
+  themes: !include themes.yaml
+  extra_html_url:
+    - /local/custom_ui/state-card-custom-ui.html
+  extra_html_url_es5:
+    - /local/custom_ui/state-card-custom-ui-es5.html
 
-# Sensors
-sensor:
-  # Weather prediction
-
-# Text to speech
+# 文字转语音
 tts:
   - platform: google
 
+# homekit配置
 homekit: 
+
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
