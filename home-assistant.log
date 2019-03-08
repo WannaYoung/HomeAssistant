@@ -1,0 +1,2 @@
+2019-03-07 05:07:49 ERROR (MainThread) [homeassistant.components.device_tracker] Unable to load /config/known_devices.yaml: Config file not found: /config/known_devices.yaml
+2019-03-07 06:07:53 ERROR (MainThread) [homeassistant.components.updater] Got unexpected response: None
