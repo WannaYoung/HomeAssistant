@@ -5,7 +5,7 @@ homeassistant:
   latitude: 31.286571
   longitude: 121.130073
   # 海拔高度
-  elevation: 0
+  elevation: 20
   # 公制: metric, 英制: imperial
   unit_system: metric
   # 所在时区
@@ -19,13 +19,6 @@ default_config:
 
 # 启动欢迎语
 introduction:
-
-# 自定义面板
-panel_iframe:
-  nodered:
-    title: 'Node-Red'
-    icon: 'mdi:shuffle-variant'
-    url: 'http://home.wannayoung.top:1880/'
 
 # 使用Custom-UI
 frontend:
