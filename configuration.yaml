@@ -17,9 +17,6 @@ homeassistant:
 # 默认设置(frontend, api...)
 default_config:
 
-# 启动欢迎语
-introduction:
-
 # 使用Custom-UI
 frontend:
   themes: !include themes.yaml
@@ -30,7 +27,7 @@ frontend:
 
 # 文字转语音
 tts:
-  - platform: google
+  - platform: google_translate
 
 # homekit配置
 homekit: 

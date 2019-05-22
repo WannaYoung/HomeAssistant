@@ -1,0 +1,7 @@
+weather:
+  - platform: hf_weather
+    name: test
+    city: CN101020100
+    appkey: 8679cab645e9710ba0350cb7233e8866
+    
+sun:

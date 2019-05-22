@@ -1,0 +1,10 @@
+{
+  "domain": "aircat",
+  "name": "Phicomm M1",
+  "documentation": "https://phicomm.com",
+  "requirements": [],
+  "dependencies": [],
+  "codeowners": [
+      "yang"
+  ]
+}
