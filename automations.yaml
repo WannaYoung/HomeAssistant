@@ -1,1 +1,47 @@
-[]
+- alias: M1亮度-8点-白天
+  hide_entity: True
+  trigger:
+    platform: time
+    at: '8:00:00'
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id:
+          - input_select.brightness_m1
+        option: "白天"
+
+- alias: M1亮度-10点-关闭
+  hide_entity: True
+  trigger:
+    platform: time
+    at: '10:00:00'
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id:
+          - input_select.brightness_m1
+        option: "关闭"
+
+- alias: M1亮度-20点-夜间
+  hide_entity: True
+  trigger:
+    platform: time
+    at: '20:00:00'
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id:
+          - input_select.brightness_m1
+        option: "夜间"
+
+- alias: M1亮度-2点-关闭
+  hide_entity: True
+  trigger:
+    platform: time
+    at: '2:00:00'
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id:
+          - input_select.brightness_m1
+        option: "关闭"

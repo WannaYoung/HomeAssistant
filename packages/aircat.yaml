@@ -1,0 +1,36 @@
+﻿sensor:
+  - platform: aircat
+    name: M1
+    mac: {'B0F89311AC67':'brightness_m1'}
+    brightness_force_update: True
+
+input_select:
+  brightness_m1:
+    name: 亮度
+    options:
+      - 关闭
+      - 夜间
+      - 白天
+
+group:
+  m1a:
+    name: M1
+    view: no
+    entities:
+      - sensor.m1_hcho
+      - sensor.m1_humidity
+      - sensor.m1_pm25
+      - sensor.m1_temperature
+      - sensor.at01
+      - input_select.brightness_m1
+
+homeassistant:        
+  customize:
+    sensor.m1_hcho:
+      friendly_name: 甲醛
+    sensor.m1_humidity:
+      friendly_name: 湿度
+    sensor.m1_pm2_5:
+      friendly_name: 空气质量
+    sensor.m1_temperature:
+      friendly_name: 温度

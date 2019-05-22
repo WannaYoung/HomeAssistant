@@ -1,0 +1,42 @@
+﻿switch:
+  - platform: phicomm_dc1
+    name: dc1
+    hidden: true
+    ip: 192.168.2.52
+    ports: {'1':'dc1_s1','2':'dc1_s2','3':'dc1_s3'}
+
+sensor:
+  - platform: template
+    sensors:
+      dc1_v:
+        friendly_name: 当前电压
+        value_template: "{{ states.switch.dc1.attributes.v }}"
+        unit_of_measurement: V
+      dc1_p:
+        friendly_name: 当前功率
+        value_template: "{{ states.switch.dc1.attributes.p }}"
+        unit_of_measurement: W
+
+group:
+  dc1:
+    name: DC1插排
+    view: false
+    entities:
+      - sensor.dc1_v
+      - sensor.dc1_p
+      - sensor.dc1_totale
+      - switch.dc1
+      - switch.dc1_s1
+      - switch.dc1_s2
+      - switch.dc1_s3
+
+homeassistant:        
+  customize:
+    switch.dc1:
+      friendly_name: 总开关
+    switch.dc1_s1:
+      friendly_name: 开关1
+    switch.dc1_s2:
+      friendly_name: 开关2
+    switch.dc1_s3:
+      friendly_name: 开关3
